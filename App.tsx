@@ -9,25 +9,22 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
-  useColorScheme,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-} from 'react-native/Libraries/NewAppScreen';
 import ProductScreen from './src/screens/ProductScreen';
+import ProductDetailsScreen from './src/screens/ProductDetailsScreen.js';
 
 function App(): JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <ProductScreen/>
+        {/* <ProductScreen/> */}
+        <ProductDetailsScreen/>
       </View>
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
