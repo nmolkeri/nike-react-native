@@ -4,10 +4,14 @@ import ProductDetailsScreen from "./screens/ProductDetailsScreen";
 import ShoppingCart from "./screens/ShoppingCart";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Pressable, Text } from "react-native";
+import { useSelector } from "react-redux";
+import { selectNumberOfItems } from "./store/cartSlice";
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
+    const numberOfItems = useSelector(selectNumberOfItems);
+
     return(
         <NavigationContainer>
             <Stack.Navigator
@@ -18,7 +22,7 @@ const Navigation = () => {
                 options={({navigation}) => ({
                     headerRight: () => (
                         <Pressable onPress={() => navigation.navigate("Shopping cart")} >
-                            <Text>Cart</Text>
+                            <Text>Cart {numberOfItems}</Text>
                         </Pressable>
                         ),
                     })}

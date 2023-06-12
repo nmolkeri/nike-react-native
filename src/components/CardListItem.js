@@ -1,12 +1,16 @@
 import { View, Text, StyleSheet, Image, Button } from "react-native";
+import { cartSlice } from "../store/cartSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const CartListItem = ({ cartItem }) => {
+    const dispatch = useDispatch();
+
   const increaseQuantity = () => {
-    console.warn("increase");
+    dispatch(cartSlice.actions.changeQuantity({productId: cartItem.product.id, amount: 1}));
   };
 
   const decreaseQuantity = () => {
-    console.warn("decrease");
+    dispatch(cartSlice.actions.changeQuantity({productId: cartItem.product.id, amount: -1}));
   };
 
   return (

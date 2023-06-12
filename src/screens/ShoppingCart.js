@@ -1,16 +1,19 @@
 import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
-import cart from "../data/cart";
 import CardListItem from "../components/CardListItem";
+import { useSelector, useDispatch } from 'react-redux';
+import { productSlice } from '../store/productSlice';
 
 
 const ShoppingCart = () => {
-    const checkout = () => {
-      
+    var cartItems = useSelector((state) => state.cart.items);
+    const dispatch = useDispatch();
+
+    const checkout = (item) => () => {
     };
     return(
         <>
         <FlatList
-            data={cart}
+            data={cartItems}
             renderItem={({item}) =>
                 <CardListItem cartItem={item}/> }
             ListFooterComponent={() => (

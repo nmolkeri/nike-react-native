@@ -9,17 +9,17 @@ import {
   ScrollView,
   Pressable
 } from 'react-native';
-import products from '../data/products';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { cartSlice } from '../store/cartSlice';
 
 
 const ProductDetailsScreen = () => {
     var product = useSelector((state) => state.products.selectedProduct);
-    
+    const dispatch = useDispatch();
     const {width} = useWindowDimensions()
 
-    const addToCart = () => {
-      
+    const addToCart = (item) => () => {
+      dispatch(cartSlice.actions.addItemToCart({product}))
     };
 
     return (
@@ -52,7 +52,7 @@ const ProductDetailsScreen = () => {
         </ScrollView>
 
         <Pressable
-          onPress={addToCart} 
+          onPress={addToCart(product)} 
           style={styles.button}>
           <Text style={styles.buttonText}>
             Add to cart
