@@ -14,15 +14,12 @@ import {
 
 import ProductScreen from './src/screens/ProductScreen';
 import ProductDetailsScreen from './src/screens/ProductDetailsScreen.js';
+import ShoppingCart from './src/screens/ShoppingCart';
+import Navigation from './src/navigation';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        {/* <ProductScreen/> */}
-        <ProductDetailsScreen/>
-      </View>
-    </SafeAreaView>
+      <Navigation/>
   );
 }
 
