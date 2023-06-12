@@ -11,15 +11,15 @@ import {
   StyleSheet,
   View,
 } from 'react-native';
-
-import ProductScreen from './src/screens/ProductScreen';
-import ProductDetailsScreen from './src/screens/ProductDetailsScreen.js';
-import ShoppingCart from './src/screens/ShoppingCart';
+import { Provider } from 'react-redux';
 import Navigation from './src/navigation';
+import { store } from './src/store';
 
 function App(): JSX.Element {
   return (
-      <Navigation/>
+  <Provider store={store}>
+    <Navigation/>
+  </Provider>
   );
 }
 

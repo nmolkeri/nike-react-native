@@ -4,10 +4,8 @@ import ProductDetailsScreen from "./screens/ProductDetailsScreen";
 import ShoppingCart from "./screens/ShoppingCart";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Pressable, Text } from "react-native";
-import {Icon} from "react-native-vector-icons";
 
 const Stack = createNativeStackNavigator();
-
 
 const Navigation = () => {
     return(
